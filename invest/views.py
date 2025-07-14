@@ -139,7 +139,7 @@ def deposit(request):
     def create_investment_tiers():
         tiers_data = [
             {
-                'name': 'BASIC',
+                'name': 'BUSINESS',
                 'roi_percentage': Decimal('10.00'),
                 'duration_days': 5,
                 'min_investment': Decimal('100.00'),
@@ -150,7 +150,7 @@ def deposit(request):
                 'capital_return': True
             },
             {
-                'name': 'STANDARD',
+                'name': 'PARTNERSHIP',
                 'roi_percentage': Decimal('15.00'),
                 'duration_days': 5,
                 'min_investment': Decimal('3000.00'),
@@ -161,7 +161,7 @@ def deposit(request):
                 'capital_return': True
             },
             {
-                'name': 'PROFESSIONAL',
+                'name': 'TRADEMARK',
                 'roi_percentage': Decimal('25.00'),
                 'duration_days': 7,
                 'min_investment': Decimal('15000.00'),
@@ -172,7 +172,7 @@ def deposit(request):
                 'capital_return': True
             },
             {
-                'name': 'ADVANCED',
+                'name': 'VIP',
                 'roi_percentage': Decimal('50.00'),
                 'duration_days': 7,
                 'min_investment': Decimal('50000.00'),
@@ -223,10 +223,10 @@ def deposit(request):
             
             # Get investment tier by name
             tier_mapping = {
-                'basic': 'BASIC',
-                'standard': 'STANDARD', 
-                'professional': 'PROFESSIONAL',
-                'advanced': 'ADVANCED'
+                'business': 'BUSINESS',
+                'partnership': 'PARTNERSHIP', 
+                'trademark': 'TRADEMARK',
+                'vip': 'VIP'
             }
             tier_name = tier_mapping.get(selected_tier.lower())
             
